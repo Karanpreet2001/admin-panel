@@ -1,10 +1,16 @@
+import NavBar from "../../components/navbar/NavBar";
+import SideBar from "../../components/sidebar/SideBar";
 import "./single.scss";
 
 
 const Single = () => {
     return ( 
         <div className="single">
-        <h1 className="title">Single</h1>
+            <SideBar/>
+        <div className="singleContainer">
+            <NavBar/>
+            </div>
+
     </div> 
      );
 }

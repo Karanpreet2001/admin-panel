@@ -6,9 +6,25 @@
         flex: 6;
     }
 
-    .widgets{
+    .widgets, .charts{
         display: flex;
         padding: 20px;
         gap: 20px;
+    }
+
+    .charts{
+        padding: 5px 20px;
+    }
+    .listContainer{
+        padding: 20px;
+        margin: 20px;
+        -webkit-box-shadow: 5px 6px 19px -5px rgba(0,0,0,0.47); 
+        box-shadow: 5px 6px 19px -5px rgba(130, 129, 130, 0.97);
+
+        .listTitle{
+            font-weight: 500;
+            color: gray;
+            margin-bottom: 15px;
+        }
     }
 }

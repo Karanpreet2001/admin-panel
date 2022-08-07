@@ -1,8 +1,7 @@
 
 .list{
-    background-color: rgb(12, 153, 45);
-
-    .title{
-        color: white;
+    display: flex;
+    .listContainer{
+        flex: 6;
     }
 }
