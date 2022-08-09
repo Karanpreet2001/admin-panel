@@ -12,20 +12,29 @@ import SettingsSystemDaydreamIcon from '@mui/icons-material/SettingsSystemDaydre
 import SettingsIcon from '@mui/icons-material/Settings';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import LogoutIcon from '@mui/icons-material/Logout';
-
+import {Link} from 'react-router-dom';
+import { useContext } from "react";
+import { DarkModeContext } from "../../context/darkModeContext";
 
 const SideBar = () => {
+
+  const {dispatch} = useContext(DarkModeContext);
+
+
+
     return ( 
         <div className="sidebar">
-            <div className="logo"><span className="logoName">AdminPanel</span></div> <hr />
+            <div className="logo">
+                <Link to="/" style={{textDecoration: "none"}}><span className="logoName">AdminPanel</span></Link>
+            </div> <hr />
             <div className="center">
                 <ul>
                     <p className="title">Main</p>
-                    <li><DashboardIcon className="icon"/><span>Dashboard</span></li>
+                    <li><DashboardIcon className="icon"/><Link to="/users" style={{textDecoration: "none"}}><span>Dashboard</span></Link></li>
                     <p className="title">LIST</p>
 
                     <li><PermIdentityIcon className="icon"/><span>Users</span></li>
-                    <li><InventoryIcon className="icon"/><span>Products</span></li>
+                    <li><InventoryIcon className="icon"/><Link to="/products" style={{textDecoration: "none"}}><span>Products</span></Link></li>
                     <li><ListAltIcon className="icon"/><span>Orders</span></li>
                     <p className="title">USEFUL</p>
 
@@ -46,8 +55,8 @@ const SideBar = () => {
                 </ul>
             </div>
             <div className="bottom">
-                <div className="colorOption"></div>
-                <div className="colorOption"></div>
+                <div className="colorOption" onClick={()=> dispatch({type:"LIGHT"})}></div>
+                <div className="colorOption" onClick={()=> dispatch({type:"DARK"})}></div>
             </div>
         </div>
      );
