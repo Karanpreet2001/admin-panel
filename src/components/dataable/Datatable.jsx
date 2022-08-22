@@ -4,6 +4,8 @@ import "./datatable.scss";
 import { DataGrid } from '@mui/x-data-grid';
 import { userColumns, userRows } from "../../datasource";
 import { useState } from "react";
+import {Link} from "react-router-dom";
+
 
 
 const Datatable = () => {
@@ -16,7 +18,9 @@ const Datatable = () => {
         renderCell: (params)=>{
             return (
                 <div className="cellAction">
+                    <Link to="/user/test" style={{textDecoration: "none"}}> 
                     <div className="viewButton">View</div>
+                    </Link>
                     <div className="deleteButton" onClick={()=>handleDelete(params.row.id)}>Delete</div>
                 </div>
             )
